@@ -1,7 +1,20 @@
-# FE
+# BoothFit FE
 
-부스핏 React+Vite 프런트엔드 저장소입니다. 현재 애플리케이션 소스가 추가되기 전이므로 CI는 npm 실행을 건너뛰고, PR의 브랜치·이슈 연결 규칙을 검사합니다.
+React와 Vite로 구성한 부스핏 프런트엔드입니다. 현재 화면은 CI 검증을 위한 최소 앱이며 서비스 기능은 아직 포함하지 않습니다.
 
-작업을 시작하기 전 [협업 규칙](CONTRIBUTING.md)을 확인해 주세요. 기능 작업은 FE 이슈를 만들고 `dev`에서 분기한 뒤 `dev`로 PR을 엽니다. 배포할 변경은 `dev`에서 `main`으로 PR을 엽니다.
+## 로컬 실행
 
-React+Vite 프로젝트를 추가할 때는 `package.json`과 `package-lock.json`을 함께 반영해 주세요. 그러면 CI에서 Node.js 22로 설치, lint, test, build를 실행합니다. lint와 test는 해당 npm 스크립트가 있을 때 실행됩니다.
+Node.js 22.13 이상을 설치한 뒤 다음 명령을 실행합니다.
+
+```bash
+npm ci
+npm run dev
+```
+
+개발 서버 주소는 실행 결과에 표시됩니다. 변경 사항을 검증하려면 `npm run lint`, `npm test`, `npm run build`를 실행합니다.
+
+## 협업과 CI
+
+작업 전 [협업 규칙](CONTRIBUTING.md)을 확인해 주세요. FE 이슈를 만들고 `dev`에서 작업 브랜치를 분기해 `dev`로 PR을 엽니다. 배포할 변경은 `dev`에서 `main`으로 PR을 엽니다.
+
+GitHub Actions는 `dev`와 `main` 대상 PR 및 해당 브랜치의 푸시에서 Node.js 22로 `npm ci`, lint, test, build를 실행합니다. PR에는 브랜치 번호와 같은 `Closes #<이슈번호>`를 적어야 합니다.
