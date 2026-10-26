@@ -4,13 +4,14 @@ Figma: https://www.figma.com/design/LKlQsb45w3wTCJsOGJikHZ
 
 ## 실행
 
-프로젝트 루트는 `C:\boothfit\FE\booth`입니다. Git 저장소 루트는 상위 `FE`입니다.
+프로젝트와 Git 저장소 루트는 `C:\boothfit\FE`입니다. 이 폴더에서 설치·개발·검사를 실행합니다.
 
 ```sh
 npm install
 npm run dev
 npm run build
 npm run lint
+npm test
 npm run test:ui
 ```
 
@@ -91,6 +92,8 @@ import { Button, Input, Badge, BoothCard } from './components'
 - AppHeader와 DetailHeader를 분리했습니다. 부스 상세·후기 화면의 뒤로 가기/닫기 요구가 다르기 때문입니다.
 
 ## 검증
+
+CI는 저장소 루트에서 `npm ci`, `npm run lint`, `npm test`, `npm run build`를 실행합니다. Vitest는 src 아래 단위 테스트만 실행하고 Playwright 브라우저 검사는 별도로 실행합니다.
 
 `npm run test:ui`는 Chrome에서 모바일 오버플로, 필터/선택, 인원 경계, 모달 포커스/ESC, 역할별 메뉴와 행사 폼을 확인합니다.
 Chrome이 없으면 `PLAYWRIGHT_CHANNEL=msedge` 등 설치된 브라우저 채널을 지정하거나 Chromium을 설치하세요.

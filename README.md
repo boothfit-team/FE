@@ -1,20 +1,16 @@
-# BoothFit FE
+# 부스핏 프런트엔드
 
-React와 Vite로 구성한 부스핏 프런트엔드입니다. 현재 화면은 CI 검증을 위한 최소 앱이며 서비스 기능은 아직 포함하지 않습니다.
+React + TypeScript + Vite + Tailwind CSS v4.
 
-## 로컬 실행
-
-Node.js 22.13 이상을 설치한 뒤 다음 명령을 실행합니다.
-
-```bash
-npm ci
+```sh
+npm install
 npm run dev
 ```
 
-개발 서버 주소는 실행 결과에 표시됩니다. 변경 사항을 검증하려면 `npm run lint`, `npm test`, `npm run build`를 실행합니다.
+기본 화면은 공통 컴포넌트 갤러리입니다. 방문자·운영자·관리자 예시는 갤러리 상단 링크로 확인합니다.
 
-## 협업과 CI
+컴포넌트 목록, props, Figma 대응 화면과 공통화 기준은 [컴포넌트 가이드](docs/components.md)를 참고하세요.
 
-작업 전 [협업 규칙](CONTRIBUTING.md)을 확인해 주세요. FE 이슈를 만들고 `dev`에서 작업 브랜치를 분기해 `dev`로 PR을 엽니다. 배포할 변경은 `dev`에서 `main`으로 PR을 엽니다.
+검사: `npm run build`, `npm run lint`, `npm test`, `npm run test:ui`.
 
-GitHub Actions는 `dev`와 `main` 대상 PR 및 해당 브랜치의 푸시에서 Node.js 22로 `npm ci`, lint, test, build를 실행합니다. PR에는 브랜치 번호와 같은 `Closes #<이슈번호>`를 적어야 합니다.
+앱과 Git 저장소의 루트는 `FE`입니다. 이 폴더에서 위 명령을 실행합니다.
