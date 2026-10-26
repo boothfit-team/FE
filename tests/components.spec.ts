@@ -12,7 +12,7 @@ test('category filtering and booth selection are controlled', async ({ page }) =
 })
 
 test('stepper respects min/max and radio group supports keyboard selection', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/?preview=components')
   const minus = page.getByRole('button', { name: '예약 인원 줄이기' })
   const plus = page.getByRole('button', { name: '예약 인원 늘리기' })
   await expect(minus).toBeDisabled()
@@ -27,7 +27,7 @@ test('stepper respects min/max and radio group supports keyboard selection', asy
 })
 
 test('bottom sheet traps focus, closes on Escape and restores trigger focus', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/?preview=components')
   const trigger = page.getByRole('button', { name: '확인 바텀시트 열기' })
   await trigger.click()
   const dialog = page.getByRole('dialog')
