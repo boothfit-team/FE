@@ -1,0 +1,62 @@
+@import "@fontsource/noto-sans-kr/400.css";
+@import "@fontsource/noto-sans-kr/700.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans KR", sans-serif;
+  --color-brand: #4e5cf0;
+  --color-brand-strong: #4050c9;
+  --color-brand-soft: #eef0ff;
+  --color-brand-selected: #e9edff;
+  --color-canvas: #fbfcff;
+  --color-ink: #152238;
+  --color-muted: #637188;
+  --color-subtle: #8994a8;
+  --color-line: #dde3ed;
+  --color-surface-muted: #f3f5fa;
+  --color-success: #109774;
+  --color-success-soft: #eaf4f2;
+  --color-warning: #a97417;
+  --color-warning-soft: #fff6e9;
+  --color-danger: #be4d45;
+  --color-danger-soft: #fff0ef;
+  --color-scrim: #0c152b;
+  --color-poster: #2457e5;
+  --color-poster-accent: #6c8dff;
+  --color-poster-surface: #eef1fb;
+  --radius-control: 11px;
+  --radius-field: 10px;
+  --radius-badge: 9px;
+  --radius-card: 18px;
+  --radius-sheet: 24px;
+  --text-caption: 0.6875rem;
+  --text-caption--line-height: 1.8;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.65;
+  --text-body: 0.8125rem;
+  --text-body--line-height: 1.6;
+  --text-section: 1.125rem;
+  --text-section--line-height: 1.45;
+  --text-page: 1.4375rem;
+  --text-page--line-height: 1.45;
+}
+@layer base {
+  html { font-family: var(--font-sans); color: var(--color-ink); background: var(--color-canvas); }
+  body { margin: 0; min-width: 320px; }
+  button:not(:disabled), select:not(:disabled) { cursor: pointer; }
+  button, input, select, textarea { font: inherit; }
+  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 3px; }
+  ::selection { background: var(--color-brand-selected); }
+}
+@layer components {
+  .field-control {
+    @apply block min-h-[43px] w-full min-w-0 rounded-field border border-line bg-white px-[11px] py-2 text-body text-ink placeholder:text-subtle focus:border-brand focus:outline-2 focus:outline-offset-1 focus:outline-brand/25 disabled:cursor-not-allowed disabled:bg-surface-muted disabled:text-subtle aria-invalid:border-danger;
+  }
+  .large-text {
+    --text-caption: 0.8125rem;
+    --text-label: 0.875rem;
+    --text-body: 0.9375rem;
+    --text-section: 1.25rem;
+    --text-page: 1.625rem;
+  }
+}
