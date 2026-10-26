@@ -15,7 +15,8 @@ npm test
 npm run test:ui
 ```
 
-- `/`: 컴포넌트 갤러리
+- `/`: 방문자 홈 화면
+- `/?preview=components`: 컴포넌트 갤러리
 - `/?preview=visitor`: 방문자 부스 목록 및 예약 예시
 - `/?preview=operator`: 운영자 대기열 예시
 - `/?preview=admin`: 관리자 행사 입력 예시
